@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart_items %}
+            <li>
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
+                {{ item.product.name }} - {{ item.quantity }} x ${{ item.product.price }}
+                <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+            </li>
+        {% empty %}
+            <li>Your cart is empty.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'products_list' %}">Continue Shopping</a>
+{% endblock %}

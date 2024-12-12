@@ -1,0 +1,35 @@
+{% extends "layout/base.html" %}
+{% load static %} <!-- Add this line to load static files -->
+
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+
+
+<style>
+    ul {
+        list-style-type: disc; /* Default bullet point */
+        padding-left: 20px;   /* Optional: Add space to the left of the list */
+    }
+</style>
+</head>
+<body>
+    
+    <img src="{% static 'uploads/g.png'%}" alt="Desc" width="20" height="20">
+    <div class="p-3 mb-2 bg-info text-dark">OUR  PRODUCTS</div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary">Products</button>
+        <div style="background-color: #17a2b8; color: white; padding: 10px;">
+        <!-- <a href="{% url 'products' %}">Products</a> -->
+      </div>
+<ul>
+    <li>Miscellaneous Insurance </li>
+    <li>Engineering Insurance</li>
+    <li>Bonds Insurance</li>
+    <li>Fire Insurance</li>
+    <li>Marine Insurance</li>
+</ul>
+</div>
+
+{% endblock %}
