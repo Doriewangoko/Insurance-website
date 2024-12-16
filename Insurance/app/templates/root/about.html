@@ -1,8 +1,126 @@
+
+
 {% extends "layout/base.html" %}
 
-{% block title %}About{% endblock %}
+{% load static %}
+
+<!-- {% block title %}About Us{% endblock %} -->
 
 {% block content %}
-<h1>About Us</h1>
-<p>This is the about page content.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff; /* Light blue background */
+            color: #333;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .about-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('{% static "images/credit_in.jpg" %}') no-repeat center center/cover;
+
+            opacity: 0.2; /* Transparent background image */
+            z-index: -1;
+            border-radius: 10px; /* Matches the container */
+        }
+
+        h1, h2 {
+            color: #0056b3; /* Dark blue */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .about-section {
+            margin-top: 20px;
+        }
+
+        .values-list {
+            margin-top: 20px;
+            background-color: #f0f8ff; /* Light blue background for the list */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h1>About Us</h1>
+        <link href="css/bootstrap.min.css" rel="stylesheet" data-eqcss-read="true">
+        <p><strong>Our Company History:</strong> The Company’s early years of operation were focused on Life Assurance Business, later expanding into General Insurance. Over the years, we’ve evolved into a trusted name in the insurance industry, proudly serving the East African region.</p>
+        <p>From humble beginnings in the 1950s to becoming a fully Kenyan-owned company in 1991, our journey reflects resilience, growth, and a commitment to excellence. Today, First Assurance stands among the best-capitalized General Insurers in Kenya, with a solid foundation built on customer trust and satisfaction.</p>
+
+        <h2>Who We Are</h2>
+        <p>On 1st January 1980, The Prudential Assurance Company Ltd ceased to write any business in Kenya and Prudential Assurance Company of Kenya Ltd was incorporated to take over all General Insurance Business and the existing policies issued by the Prudential – United Kingdom. The Local Company having taken over from a solid base continued to grow and moved from Prudential Assurance Building to Yaya Centre in March 1990. On 1st January 1991, the Company became a wholly owned Kenyan Company in keeping with the growing trend in the Kenyan economy and changed its name to First Assurance Company Limited. The Company’s Shareholders are well known Businessmen in Kenya who are determined to continue with the excellent and proven policies of the Prudential. The Shareholders of the Company are conscious of the fact that the strength of Insurance Company is not judged by profitability solely. Accordingly the paid up capital of the Company has been increased steadily and now stands at Kshs. 310million which makes us one of the best capitalised General Insurers in Kenya.</p>
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>To provide assurance and quality services for all insurable financial and social expectations, creating and adding value for all stakeholders.</p>
+            
+            <h2>Our Vision</h2>
+            <p>To be the preferred and trusted provider of insurance and integrated financial services.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Values</h2>
+            <div class="values-list">
+                <ul>
+                    <li><strong>Respect:</strong> We respect and value those we work with.</li>
+                    <li><strong>Integrity:</strong> We are fair and truthful in what we do.</li>
+                    <li><strong>Service:</strong> We ensure that our customers' needs are met.</li>
+                    <li><strong>Efficiency:</strong> We strive to offer the most efficient service.</li>
+                    <li><strong>Security:</strong> We guarantee our customers' financial security.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 {% endblock %}
