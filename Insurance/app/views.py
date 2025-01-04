@@ -2,6 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from .models import  Product,CartItem
 from django.http import HttpResponse
 from django.conf import settings
+from django.http import FileResponse, HttpResponseNotFound
 import os
 from django.shortcuts import render
 
@@ -21,6 +22,17 @@ def Claims(request):
 
 def Products(request):
     return render(request, 'root/products.html')
+
+from django.http import FileResponse
+import os
+
+def download_form(request, file_name):
+    file_path = os.path.join(settings.MEDIA_ROOT, 'claimforms', file_name)
+    if os.path.exists(file_path):
+        return FileResponse(open(file_path, 'rb'), as_attachment=True)
+    else:
+        return HttpResponseNotFound("The requested file was not found.")
+
 
 # @login_required
 # def add_to_cart(request, product_id):
